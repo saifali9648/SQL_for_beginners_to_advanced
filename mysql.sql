@@ -116,4 +116,20 @@ CREATE TABLE employee(
 
 INSERT INTO employee(firstname,lastname,age,salary) VALUES('RAKESH','KUMAR',23,10000);
 
+--you can set your values at the place of default valuesl;
+INSERT INTO employee(firstname,lastname,age,salary,locaction) VALUES('RAKESH','KUMAR',23,10000,'hydrabad');
 
+INSERT INTO employee(firstname,lastname,age,salary,locaction) VALUES('RAKESH','KUMAR',23,10000,null);--it will give you an error
+
+
+--=============================LESSION3=========================================
+--PRIMARY KEY
+--AUTO INCREMENT KEY
+--UNIQUE KEY
+--UNIQUE KEY VS PRIMARY KEY
+--===========================================
+
+--primary key
+--========================================
+
+--primary key helps to uniquely identify the record in the table
