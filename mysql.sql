@@ -58,7 +58,44 @@ INSERT INTO employee(firstname,lastname,age,salary,location) VALUES("Rajes's",'k
 --sencond way is
 --INSERT INTO employee(firstname,lastname,age,salary,location) VALUES('Rajes\'s','kumar',32,1100,'Saharsa');
 
---how to insert multiple record
+--how to insert multiple record in sigle query
 
 INSERT INTO employee(firstname,middlename,lastname,age,salary,location) VALUES('md','rashid','ali',23,10000,'saharsa'),('r
 akesh','kumar','mehta',34,10000,'saharsa');
+
+--NULL constrant
+--=========================================================
+--when we want in our table that any particular or any field must be any value than we use "NOT NULL" constrant
+
+--like
+CREATE TABLE employee(
+      firstname varchar(20) NOT NULL,
+      middlename varchar(20) NOT NULL,
+      lastname varchar(20) NOT NULL,
+      age int,
+      salary int NOT NULL,
+      locaction varchar(30) NOT NULL
+);
+
+--Default values
+--============================================================
+--when we use any particular values and required many times than we set as default
+
+CREATE TABLE employee(
+   firtname varchar(20) NOT NULL,
+   middlename varchar(20),
+   lastname varchar(20) NOT NULL,
+   age INT NOT NULL,
+   salary INT NOT NULL,
+   locaction varchar(20) DEFAULT 'SAHARSA'
+);
+--AFTER CREATING TABLE AND SET DEFAULT VALUE THAN 
+--INSERT DATA INTO TABLE WITHOUT MENTION PARTICULAR DEAFAULT VALUE
+
+INSERT INTO employee(firstname,lastname,age,salary) VALUES('MD','SIAF',23,10000);
+--YOU CAN ALSO SET YOUR OWN VALUES IF YOU HAVE ANOTER DATA 
+--LIKE
+INSERT INTO employee(firstname,lastname,age,salary,locaction) VALUES('MD','RASHID',25,10000,'SASARAM');
+--YOU CAN ALSO SET NULL IN THE PLACE OF DEFAULT VALUE
+INSERT INTO employee(firstname,lastname,age,salary,locaction) VALUES('RAJESH','KUMAR',26,10000,NULL);
+
