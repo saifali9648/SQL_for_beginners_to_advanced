@@ -99,3 +99,21 @@ INSERT INTO employee(firstname,lastname,age,salary,locaction) VALUES('MD','RASHI
 --YOU CAN ALSO SET NULL IN THE PLACE OF DEFAULT VALUE
 INSERT INTO employee(firstname,lastname,age,salary,locaction) VALUES('RAJESH','KUMAR',26,10000,NULL);
 
+--Combination of DEFAULT and NOT NULL
+--=======================================================================
+--first drop the earlier table
+DROP TABLE employee;
+--THAN CREATE NEW TABLE 
+CREATE TABLE employee(
+   firtname varchar(20) NOT NULL,
+   middlename varchar(20),
+   lastname varchar(20) NOT NULL,
+   age INT NOT NULL,
+   salary INT NOT NULL,
+   locaction varchar(20) NOT NULL DEFAULT 'SAHARSA'
+);
+--than insert data accordingly
+
+INSERT INTO employee(firstname,lastname,age,salary) VALUES('RAKESH','KUMAR',23,10000);
+
+
