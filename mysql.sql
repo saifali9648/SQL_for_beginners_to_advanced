@@ -133,3 +133,14 @@ INSERT INTO employee(firstname,lastname,age,salary,locaction) VALUES('RAKESH','K
 --========================================
 
 --primary key helps to uniquely identify the record in the table
+
+
+CREATE TABLE employee(
+   empid INT PRIMARY KEY,
+   firstname varchar(20) NOT null,
+   middlename varchar(20),
+   lastname varchar(20) NOT NULL,
+   age INT NOT NULL,
+   salary INT NOT NULL,
+   locaction varchar NOT NULL DEFAULT "SAHARSA"
+);
