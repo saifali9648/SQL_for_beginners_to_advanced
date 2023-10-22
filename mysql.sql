@@ -144,3 +144,12 @@ CREATE TABLE employee(
    salary INT NOT NULL,
    locaction varchar NOT NULL DEFAULT "SAHARSA"
 );
+
+INSERT INTO employee(empid,firstname,middlename,lastname,age,salary) 
+VALUES(1,'MD','SAIF','ALI',23,10000)
+
+--if you insert same empid that is 1 than it will give you an error(because of that empid set as primary key)
+INSERT INTO employee(empid,firstname,middlename,lastname,age,salary) 
+VALUES(1,'MD','SAIF','ALI',23,10000)
+
+
