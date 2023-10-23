@@ -152,4 +152,15 @@ VALUES(1,'MD','SAIF','ALI',23,10000)
 INSERT INTO employee(empid,firstname,middlename,lastname,age,salary) 
 VALUES(1,'MD','SAIF','ALI',23,10000)
 
+--AUTO INCREMENT
+--==================================================
+CREATE TABLE employee(
+   empid AUTO_INCREMENT PRIMARY KEY,
+   firstname varchar(20) NOT NULL,
+   middlename varchar(20),
+   lastname varchar(20)NOT NULL,
+   age INT NOT NULL,
+   salary INT NOT NULL,
+   locaction varchar(20) DEFAULT 'saharsa'
+);
 
