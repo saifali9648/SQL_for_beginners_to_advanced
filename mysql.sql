@@ -164,4 +164,26 @@ CREATE TABLE employee(
    locaction varchar(20) DEFAULT 'saharsa',
    PRIMARY KEY(empid)
 );
+--LET INSERT SOME VALUES IN TABLE
+
+INSERT INTO employee(firstname,lastname,age,salary) VALUES('MD','SAIF',23,10000);
+
+--here i am not put the value of empid if you do SELECT * FORM employee; you get the value of empid
+--initialy value of empid is 1 then next is 2 and so on........
+SELECT *FROM employee;
+
+--UNIQUE KEY v\s primary key
+--===================================================================================
+--you can have only one PRIMARY KEY
+--and the PRIMARY KEY can not hold NULL
+--we should use primary key when we have to uniquely identify each record
+--the purpose of primary key is to make sure that we can uniquly identify the record
+
+--UNIQUE KEY can hold NULL
+
+--for example in MySQL a unique key can hold any number of null values
+--in other famoud DB a unique key can hodl only one null value
+--so the purpose of unique key  is to make sure the values do not duplicates
+
+--we can have only one primary key but multiple unique key
 
