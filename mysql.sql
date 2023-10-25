@@ -187,3 +187,22 @@ SELECT *FROM employee;
 
 --we can have only one primary key but multiple unique key
 
+--composite primary key
+
+CREATE TABLE employee(
+   firstname varchar(20) NOT NULL,
+   lastname varchar(20) NOT NULL,
+   age INT NOT NULL,
+   PRIMARY KEY(firstname,lastname)
+);
+
+INSERT INTO employee VALUES('MD','SAIF',23);
+
+INSERT INTO employee VALUES('MD','RASHID',23); --IT WILL NOT GIVE YOU AN ERROR
+
+
+--IF YOU INSERT AGEIN THE FIRST QUERY THAN IT WILL GIVE YOU AN ERROR LIKE DUPLICATE ENTRY 
+
+
+
+
