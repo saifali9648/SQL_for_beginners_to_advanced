@@ -206,3 +206,32 @@ INSERT INTO employee VALUES('MD','RASHID',23); --IT WILL NOT GIVE YOU AN ERROR
 
 
 
+
+CREATE TABLE employee(
+   firstname varchar(20) UNIQUE KEY,
+   lastname varchar(20) NOT NULL,
+   age INT NOT NULL,
+   salary INT NOT NULL
+);
+
+
+INSERT INTO employee(firtname,lastname,age,salary) VALUES('MD','SAIF',23,10000);
+
+INSERT INTO employee(firtname,lastname,age,salary) VALUES(NULL,'SAIF',23,10000); ---IT WILL NOT GIVE YOU ERROR 
+
+--IF YOU INSERT AGAIN FIRST QUERY THAN IT WILL GIVE YOU AN ERROR THAT IS DUPLICATE BECAUSE OF UNIQUE KEY CONSTRANT
+
+INSERT INTO employee(firtname,lastname,age,salary) VALUES('MD','SAIF',23,10000); ---ERROR
+
+--COMBINATION OF UNIQE KEY CONSTRANT
+
+CREATE TABLE employee(
+   ID INT,
+   firstname varchar(20) NOT NULL,
+   lastname varchar(20) NOT NULL,
+   age INT NOT NULL,
+   salary INT NOT NULL,
+   UNIQUE KEY(ID,firstname)
+);
+
+
