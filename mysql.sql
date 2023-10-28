@@ -226,12 +226,22 @@ INSERT INTO employee(firtname,lastname,age,salary) VALUES('MD','SAIF',23,10000);
 --COMBINATION OF UNIQE KEY CONSTRANT
 
 CREATE TABLE employee(
-   ID INT,
-   firstname varchar(20) NOT NULL,
+   ID INT UNIQUE KEY,
+   firstname varchar(20) UNIQUE KEY NOT NULL,
    lastname varchar(20) NOT NULL,
    age INT NOT NULL,
-   salary INT NOT NULL,
-   UNIQUE KEY(ID,firstname)
+   salary INT NOT NULL
 );
 
 
+---============LESSION-4========================
+
+CRUD
+
+C  - CREATE => INSERT
+R  - READ   => SELECT
+U  - UPDATE => UPDATE
+D  - DELETE => DELETE
+   
+
+   ddkkd
