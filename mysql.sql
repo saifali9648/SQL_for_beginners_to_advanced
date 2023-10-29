@@ -242,6 +242,11 @@ C  - CREATE => INSERT
 R  - READ   => SELECT
 U  - UPDATE => UPDATE
 D  - DELETE => DELETE
-   
 
-   ddkkd
+CREATE TABLE employee(
+   id INT,
+   firstname varchar,
+   lastname varchar,
+   age INT,
+   salary INT
+);
