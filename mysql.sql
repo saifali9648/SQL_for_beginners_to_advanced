@@ -242,11 +242,15 @@ C  - CREATE => INSERT
 R  - READ   => SELECT
 U  - UPDATE => UPDATE
 D  - DELETE => DELETE
-
+--first create a database like 'saif'
+CREATE DATABASE saif;
+--than create table employee
 CREATE TABLE employee(
-   id INT,
-   firstname varchar,
-   lastname varchar,
-   age INT,
-   salary INT
+   id INT PRIMARY KEY,
+   firstname varchar NOT NULL,
+   middlename varchar,
+   lastname varchar NOT NULL,
+   age int NOT NULL,
+   salary int NOT null,
+   locaction varchar NOT NULL DEFAULT 'saharsa'
 );
