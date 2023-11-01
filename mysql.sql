@@ -254,3 +254,4 @@ CREATE TABLE employee(
    salary int NOT null,
    locaction varchar NOT NULL DEFAULT 'saharsa'
 );
+dkdk
