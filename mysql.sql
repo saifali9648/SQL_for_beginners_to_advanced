@@ -254,4 +254,15 @@ CREATE TABLE employee(
    salary int NOT null,
    locaction varchar NOT NULL DEFAULT 'saharsa'
 );
-dkdk
+--selecting all columns
+SELECT *FROM employee;
+
+--selecting specific columns
+
+SELECT firstname,lastname,age FROM employee;
+
+
+--select by appling where clause (fillter condition)
+
+SELECT * FROM employee where age>20;
+
