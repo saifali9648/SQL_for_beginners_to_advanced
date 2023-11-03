@@ -266,3 +266,7 @@ SELECT firstname,lastname,age FROM employee;
 
 SELECT * FROM employee where age>20;
 
+--selecting using two clause
+
+SELECT firstname,lastname FROM employee where age>26 and salary>1000;
+
