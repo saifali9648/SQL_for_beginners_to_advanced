@@ -278,6 +278,18 @@ SELECT firstname,lastname FROM employee where age>26 and salary>1000;
 --=============================================================
 
 --use update Query with clause
+--before updating any record check the corrosponding values
+--like
+SELECT firstname,lastname,locaction FROM employee;
+--than update 
 
 UPDATE employee SET locaction='MADHEPURA' WHERE firstname='MD' AND lastname='SAIF';
+
+
+--Delete
+--==============================================================
+---before deleting any record check the crrosponding values
+--like 
+SELECT firstname,lastname,age from employee WHERE age=23;
+DELETE FROM employee WHERE age=23;
 
