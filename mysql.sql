@@ -316,6 +316,16 @@ Alter TABLE employee add column jobtitle varchar(20);
 
 Alter TABLE employee DROP column jobtitle;
 
+--set varchar(30) of firstname
+Alter TABLE employee modify cloumn firstname varchar(30);
+
+--remove primary key from the table
+ Alter table employee drop primary key;
+
+--add primary key 
+
+Alter TABLE employee add primary key(id);
+
 
 
 
