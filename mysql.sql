@@ -293,3 +293,30 @@ UPDATE employee SET locaction='MADHEPURA' WHERE firstname='MD' AND lastname='SAI
 SELECT firstname,lastname,age from employee WHERE age=23;
 DELETE FROM employee WHERE age=23;
 
+--if i write the statement like...
+ DELETE from employee;
+
+ --then it will delete all the record which is avilable in table
+
+
+ --Alter v\s Update
+
+--update is used to update our record
+
+--and Alter is used to alter the schema
+
+--Alter
+--==================================================================
+
+--add a column in employee table column name is jobtile
+
+Alter TABLE employee add column jobtitle varchar(20);
+
+--drop the column jobtitle 
+
+Alter TABLE employee DROP column jobtitle;
+
+
+
+
+
