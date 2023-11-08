@@ -327,6 +327,15 @@ Alter TABLE employee modify cloumn firstname varchar(30);
 Alter TABLE employee add primary key(id);
 
 
+DDL & DML
+--====================================================================
+DDL => DATA DEFINATION LANGUAGE 
+      =>DEALS WITH TABLE STRUCTURE
+   
 
+DML => DATA MANIPULATION LANGUAGE
+      =>DEALS WITH DATA
 
+      DDL ->>>> CREATE , Alter , DROP
 
+      DML ->>>> INSERT,UPDATE , DELETE
