@@ -339,3 +339,14 @@ DML => DATA MANIPULATION LANGUAGE
       DDL ->>>> CREATE , Alter , DROP
 
       DML ->>>> INSERT,UPDATE , DELETE
+
+----TRUNCATE 
+--=======================================================================
+
+--truncate also remove all record like delete command but truncate is a DDL command
+--and delete is a DML command 
+
+--truncate drop the table and recreate it
+
+
+
