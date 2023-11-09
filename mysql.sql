@@ -349,4 +349,51 @@ DML => DATA MANIPULATION LANGUAGE
 --truncate drop the table and recreate it
 
 
+Foreign key constrant
+--==========================================================================
+
+CREATE TABLE students(
+   student_id int PRIMARY KEY AUTO_INCREMENT,
+   student_fname varchar(20) NOT NULL,
+   student_mname varchar(20),
+   student_lname varchar(20) NOT NULL,
+   student_email varchar(30) NOT NULL unique key,
+   student_phone varchar(15) NOT NULL,
+   student_alt_phone varchar(15),
+   enrollment_date timestamp NOT NULL,
+   year_of_exp int NOT NULL,
+   student_company varchar(20),
+   batch_date varchar(20) NOT NULL,
+   source_of_joining varchar(20) NOT NULL,\
+   location varchar(20) NOT NULL
+);
+
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('rohot','sharma','rohit@gmail.com','9191919191',3,'walmart','10-11-2023','linkedln','ambala');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('irfan','pathan','irfan@gmail.com','9192919291',3,'flipkart','10-11-2023','linkedln','ambala');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('surya','kumar','surya`@gmail.com','9193919393',3,'amazon','10-11-2023','linkedln','ambala');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('virat','kholi','virat`@gmail.com','9194919493',5,'hcl','10-11-2023','facebook','delhi');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('inshan','kishan','ishan`@gmail.com','9195919493',4,'TCS','10-11-2023','facebook','bihar');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('md','shami','shami`@gmail.com','9191919493',6,'infogain','10-11-2023','instagram','delhi');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('subhman','gill','gill@gmail.com','9197919493',4,'microsoft','10-11-2023','instagram','mumbai');
 
