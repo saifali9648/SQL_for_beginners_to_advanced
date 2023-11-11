@@ -397,3 +397,12 @@ INSERT INTO students(student_fname,student_lname,student_email,student_phone,yea
 student_company,batch_date,source_of_joining,location) 
 VALUES('subhman','gill','gill@gmail.com','9197919493',4,'microsoft','10-11-2023','instagram','mumbai');
 
+--after that create course table
+
+CREATE TABLE courses(
+   course_id int PRIMARY KEY,
+   course_name varchar(20) NOT NULL,
+   course_duration_month int NOT NULL,
+   course_fee int NOT NULL
+);
+
