@@ -406,3 +406,14 @@ CREATE TABLE courses(
    course_fee int NOT NULL
 );
 
+--seed data
+
+INSERT INTO courses VALUES(1,'big data',6,50000);
+INSERT INTO courses VALUES(2,'web development',3,20000);
+INSERT INTO courses VALUES(3,'data science',6,40000);
+INSERT INTO courses VALUES(4,'devopps',1,10000);
+
+
+
+
+
