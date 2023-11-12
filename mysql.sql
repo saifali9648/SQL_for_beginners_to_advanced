@@ -369,9 +369,9 @@ CREATE TABLE students(
 );
 
 
-INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
 student_company,batch_date,source_of_joining,location) 
-VALUES('rohot','sharma','rohit@gmail.com','9191919191',3,'walmart','10-11-2023','linkedln','ambala');
+VALUES('rohot','sharma','rohit@gmail.com','9191919191',3,3,'walmart','10-11-2023','linkedln','ambala');
 
 INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
 student_company,batch_date,source_of_joining,location) 
@@ -412,6 +412,138 @@ INSERT INTO courses VALUES(1,'big data',6,50000);
 INSERT INTO courses VALUES(2,'web development',3,20000);
 INSERT INTO courses VALUES(3,'data science',6,40000);
 INSERT INTO courses VALUES(4,'devopps',1,10000);
+
+
+---let some change in our student table
+
+CREATE TABLE students(
+   student_id int PRIMARY KEY AUTO_INCREMENT,
+   student_fname varchar(20) NOT NULL,
+   student_mname varchar(20),
+   student_lname varchar(20) NOT NULL,
+   student_email varchar(30) NOT NULL unique key,
+   student_phone varchar(15) NOT NULL,
+   student_alt_phone varchar(15),
+   enrollment_date timestamp NOT NULL,
+   selected_course int NOT NULL DEFAULT '1',
+   year_of_exp int NOT NULL,
+   student_company varchar(20),
+   batch_date varchar(20) NOT NULL,
+   source_of_joining varchar(20) NOT NULL,\
+   location varchar(20) NOT NULL
+);
+--select student_fname,student_lname,selected_course,student_company,batch_date,source_of_joining,location from students;
+--seed data2
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('rohot','sharma','rohit@gmail.com','9191919191',3,3,'walmart','10-11-2023','linkedln','ambala');
+
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('irfan','pathan','irfan@gmail.com','9192919291',2,3,'flipkart','10-11-2023','linkedln','ambala');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('surya','kumar','surya`@gmail.com','9193919393',3,3,'amazon','10-11-2023','linkedln','ambala');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('virat','kholi','virat`@gmail.com','9194919493',2,5,'hcl','10-11-2023','facebook','delhi');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('inshan','kishan','ishan`@gmail.com','9195919493',4,'TCS','10-11-2023','facebook','bihar');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('md','shami','shami`@gmail.com','9191919493',6,'infogain','10-11-2023','instagram','delhi');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('subhman','gill','gill@gmail.com','9197919493',4,'microsoft','10-11-2023','instagram','mumbai');
+
+--what happend if any student choose course id 5 but not any course is exesited int course table which id is 5
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('jaspreet','bumrah','jaspreet@gmail.com','9197819493',5,4,'microsoft','10-11-2023','instagram','mumbai');
+
+--it will selected or inserted in table but no any course is available which course id is 5 
+--than problem is created 
+--and this type of problem we use foreign key constrant
+
+--again drop the table student and let some change in
+
+
+CREATE TABLE students(
+   student_id int PRIMARY KEY AUTO_INCREMENT,
+   student_fname varchar(20) NOT NULL,
+   student_mname varchar(20),
+   student_lname varchar(20) NOT NULL,
+   student_email varchar(30) NOT NULL unique key,
+   student_phone varchar(15) NOT NULL,
+   student_alt_phone varchar(15),
+   enrollment_date timestamp NOT NULL,
+   selected_course int NOT NULL DEFAULT '1',
+   year_of_exp int NOT NULL,
+   student_company varchar(20),
+   batch_date varchar(20) NOT NULL,
+   source_of_joining varchar(20) NOT NULL,
+   location varchar(20) NOT NULL,
+   FOREIGN KEY(selected_course) REFERENCES courses(course_id)
+);
+
+--now insert the data
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('rohot','sharma','rohit@gmail.com','9191919191',3,3,'walmart','10-11-2023','linkedln','ambala');
+
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('irfan','pathan','irfan@gmail.com','9192919291',2,3,'flipkart','10-11-2023','linkedln','ambala');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('surya','kumar','surya`@gmail.com','9193919393',3,3,'amazon','10-11-2023','linkedln','ambala');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('virat','kholi','virat`@gmail.com','9194919493',2,5,'hcl','10-11-2023','facebook','delhi');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('inshan','kishan','ishan`@gmail.com','9195919493',4,'TCS','10-11-2023','facebook','bihar');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('md','shami','shami`@gmail.com','9191919493',6,'infogain','10-11-2023','instagram','delhi');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('subhman','gill','gill@gmail.com','9197919493',4,'microsoft','10-11-2023','instagram','mumbai');
+
+--now insert/select courese_id  which is not available
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('jaspreet','bumrah','jaspreet@gmail.com','9197819493',5,4,'microsoft','10-11-2023','instagram','mumbai');
+
+--it will give error 
+--because of foreign key constrant
+
+--1. the foreign key constrant is used to prevent actions that would destroy links between two tables
+--2. A foreign key is a field in one table that refers to the primary key in another tabnle
+--3. selected_course is a foreign key in students table which refers to course_id(primary key) in courses table
+
+--the table with foreign key is called child table
+--the table with primary key is clled parent/referenced table 
+
+/*parent/referenced table ==>  courses
+child table ==> students*/
+
 
 
 
