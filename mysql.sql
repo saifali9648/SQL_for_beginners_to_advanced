@@ -683,6 +683,34 @@ select *from students order by enrollment_date limit 0,3;
 
 select *from students order by enrollment_date limit 3,2; 
 
+--LIKE
+--===============================================================
+
+select student_id,enrollment_date,selected_course,student_fname,year_of_exp,student_company,batch_date,source_of_joining,location from students where student_fname like '%ra%';
+
+-- % is wildcard character
+-- (_) means exactly one character
+select student_id,enrollment_date,selected_course,student_fname,year_of_exp,student_company,batch_date,source_of_joining,location from students where student_fname like 'ra%';
+
+
+select student_id,enrollment_date,selected_course,student_fname,year_of_exp,student_company,batch_date,source_of_joining,location from students where student_fname like '%at';
+
+select student_id,enrollment_date,selected_course,student_fname,year_of_exp,student_company,batch_date,source_of_joining,location from students where student_fname like '_____';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
