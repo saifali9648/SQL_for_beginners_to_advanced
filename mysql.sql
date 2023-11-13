@@ -674,7 +674,7 @@ students order by year_of_exp limit 3;
 --want to know that from which source last 5 candidates have enrolled
 
 select source_of_joining from students order by enrollment_date desc limit 5;
---this query wont work
+--this query wont work (because of order of execution) Distinct apply on both source_of_joining and enrollment_date
 select DISTINCT source_of_joining from students order by enrollment_date desc limit 5;
 
 select student_id,enrollment_date,selected_course,student_fname,year_of_exp,student_company,batch_date,source_of_joining,location from students order by enrollment_date desc limit 1;
@@ -697,6 +697,14 @@ select student_id,enrollment_date,selected_course,student_fname,year_of_exp,stud
 
 select student_id,enrollment_date,selected_course,student_fname,year_of_exp,student_company,batch_date,source_of_joining,location from students where student_fname like '_____';
 
+
+--==============================LESSION-8==================================
+--AGGREGATE FUNCTIONS
+
+Count()
+
+select Count(*) from students;
+---it will tell how many rows are in the table
 
 
 
