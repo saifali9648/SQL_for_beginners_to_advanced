@@ -350,7 +350,7 @@ DML => DATA MANIPULATION LANGUAGE
 
 
 Foreign key constrant
---==========================================================================
+--===================================LESSION-5=======================================
 
 CREATE TABLE students(
    student_id int PRIMARY KEY AUTO_INCREMENT,
@@ -429,27 +429,27 @@ CREATE TABLE students(
    year_of_exp int NOT NULL,
    student_company varchar(20),
    batch_date varchar(20) NOT NULL,
-   source_of_joining varchar(20) NOT NULL,\
+   source_of_joining varchar(20) NOT NULL,
    location varchar(20) NOT NULL
 );
 --select student_fname,student_lname,selected_course,student_company,batch_date,source_of_joining,location from students;
 --seed data2
 INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
 student_company,batch_date,source_of_joining,location) 
-VALUES('rohot','sharma','rohit@gmail.com','9191919191',3,3,'walmart','10-11-2023','linkedln','ambala');
+VALUES('rohot','sharma','rohit@gmail.com','9191919191',3,'walmart','10-11-2023','linkedln','ambala');
 
 
 INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
 student_company,batch_date,source_of_joining,location) 
-VALUES('irfan','pathan','irfan@gmail.com','9192919291',2,3,'flipkart','10-11-2023','linkedln','ambala');
+VALUES('irfan','pathan','irfan@gmail.com','9192919291',2,'flipkart','10-11-2023','linkedln','ambala');
 
 INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
 student_company,batch_date,source_of_joining,location) 
-VALUES('surya','kumar','surya`@gmail.com','9193919393',3,3,'amazon','10-11-2023','linkedln','ambala');
+VALUES('surya','kumar','surya`@gmail.com','9193919393',3,'amazon','10-11-2023','linkedln','ambala');
 
 INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
 student_company,batch_date,source_of_joining,location) 
-VALUES('virat','kholi','virat`@gmail.com','9194919493',2,5,'hcl','10-11-2023','facebook','delhi');
+VALUES('virat','kholi','virat`@gmail.com','9194919493',2,'hcl','10-11-2023','facebook','delhi');
 
 INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
 student_company,batch_date,source_of_joining,location) 
@@ -543,6 +543,147 @@ VALUES('jaspreet','bumrah','jaspreet@gmail.com','9197819493',5,4,'microsoft','10
 
 /*parent/referenced table ==>  courses
 child table ==> students*/
+
+--NOT NULL KEY
+--UNIQUE KEY CONSTRANT
+--PRIMARY KEY CONSTRANT
+--FOREIGN KEY CONSTRANT
+--check constrant (its not supported in mysql)
+
+--Constrant key is used to limit the type of data that can go into the table.
+--This ensure the accuracy and relablity of the data is maintaned.
+--if there is any voilation than the action is aborated.
+
+--======================LESSION-6==========================================
+
+--DISTINCT
+
+--ORDER by
+
+--limit
+
+--LIKE
+-------------------------------------------------------------
+--DISTINCT
+--=============================================================
+
+CREATE DATABASE saif;
+
+use saif;
+
+--create table
+
+CREATE TABLE students(
+   student_id int PRIMARY KEY AUTO_INCREMENT,
+   student_fname varchar(20) NOT NULL,
+   student_mname varchar(20),
+   student_lname varchar(20) NOT NULL,
+   student_email varchar(30) NOT NULL unique key,
+   student_phone varchar(15) NOT NULL,
+   student_alt_phone varchar(15),
+   enrollment_date timestamp NOT NULL,
+   selected_course int NOT NULL DEFAULT '1',
+   year_of_exp int NOT NULL,
+   student_company varchar(20),
+   batch_date varchar(20) NOT NULL,
+   source_of_joining varchar(20) NOT NULL,
+   location varchar(20) NOT NULL
+);
+
+--than insert some seed data
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('rohot','sharma','rohit@gmail.com','9191919191',3,'walmart','10-11-2023','linkedln','ambala');
+
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('irfan','pathan','irfan@gmail.com','9192919291',2,'flipkart','10-11-2023','linkedln','ambala');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('surya','kumar','surya`@gmail.com','9193919393',3,'amazon','10-11-2023','linkedln','ambala');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('virat','kholi','virat`@gmail.com','9194919493',2,'hcl','10-11-2023','facebook','delhi');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('inshan','kishan','ishan`@gmail.com','9195919493',4,'TCS','10-11-2023','facebook','bihar');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('md','shami','shami`@gmail.com','9191919493',6,'infogain','10-11-2023','instagram','delhi');
+
+INSERT INTO students(student_fname,student_lname,student_email,student_phone,year_of_exp,
+student_company,batch_date,source_of_joining,location) 
+VALUES('subhman','gill','gill@gmail.com','9197919493',4,'microsoft','10-11-2023','instagram','mumbai');
+
+--now if you select or you want see location of student
+
+select location from students;
+
+--it will display all location in this case redendancy is to bee there like if any place comes two time it will aslo display tow times
+
+--in this case we use DISTINCT KEYWORD
+
+SELECT DISTINCT location from students;
+
+SELECT DISTINCT source_of_joining from students;
+
+SELECT DISTINCT student_company from students;
+
+--Order By
+--====================================================================
+
+select student_fname,student_lname,selected_course,student_company,batch_date,source_of_joining,location from students ord
+er by batch_date;
+
+select student_fname,student_lname,selected_course,student_company,batch_date,source_of_joining,location from students ord
+er by selected_course;
+
+select student_fname,student_lname,selected_course,student_company,year_of_exp,batch_date,source_of_joining,location from
+students order by selected_course;
+
+select student_fname,student_lname,selected_course,student_company,year_of_exp,batch_date,source_of_joining,location from
+students order by year_of_exp;
+
+select student_fname,year_of_exp from students order by year_of_exp;
+
+select student_fname,year_of_exp from students order by year_of_exp,student_fname;
+
+--it will sort the data based on year_of_exp in desscending order
+select student_fname,year_of_exp from students order by year_of_exp desc;
+
+--Limit
+--============================================================================
+
+select student_fname,student_lname,selected_course,student_company,year_of_exp,batch_date,source_of_joining,location from
+students order by year_of_exp;
+
+--get 3 condidates with least experience
+
+select student_fname,student_lname,selected_course,student_company,year_of_exp,batch_date,source_of_joining,location from
+students order by year_of_exp limit 3;
+
+---if we use limit along with order by its more logicaly
+
+
+--want to know that from which source last 5 candidates have enrolled
+
+select source_of_joining from students order by enrollment_date desc limit 5;
+--this query wont work
+select DISTINCT source_of_joining from students order by enrollment_date desc limit 5;
+
+
+
+
+
+
+
+
 
 
 
