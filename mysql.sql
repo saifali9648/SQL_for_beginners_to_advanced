@@ -677,8 +677,11 @@ select source_of_joining from students order by enrollment_date desc limit 5;
 --this query wont work
 select DISTINCT source_of_joining from students order by enrollment_date desc limit 5;
 
+select student_id,enrollment_date,selected_course,student_fname,year_of_exp,student_company,batch_date,source_of_joining,location from students order by enrollment_date desc limit 1;
 
+select *from students order by enrollment_date limit 0,3;
 
+select *from students order by enrollment_date limit 3,2; 
 
 
 
