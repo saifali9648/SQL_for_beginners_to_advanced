@@ -722,13 +722,22 @@ select Count(DISTINCT student_company) from students;
 --like
 select Count(DISTINCT student_company) As No_of_company from students;
 
+--problem statement
+--How many students joinig in any particular month.
+--right now November so i will check how many student joinig in november batch.
 
+select count(*) from students where batch_date like '%-11%';
 
+--problem statement
+--How many students join in particular date.
 
+select count(*) from students where batch_date like '10-%';
 
+GROUP By
+--================================================================
+--WHAT I WANT TO KNOW THAT HOW MANY PEOPLE HAVE JOINED MY COURSE GOT TO KNOW ABOUT ME THROUGH
 
-
-
+SELECT source_of_joining,count(*) from students GROUP BY source_of_joining;
 
 
 
