@@ -594,7 +594,7 @@ CREATE TABLE students(
 
 INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
 student_company,batch_date,source_of_joining,location) 
-VALUES('rohot','sharma','rohit@gmail.com','9191919191',3,'walmart','10-11-2023','linkedln','ambala');
+VALUES('rohit','sharma','rohit@gmail.com','9191918191',3,'walmart','10-11-2023','linkedln','ambala');
 
 
 INSERT INTO students(student_fname,student_lname,student_email,student_phone,selected_course,year_of_exp,
@@ -703,8 +703,39 @@ select student_id,enrollment_date,selected_course,student_fname,year_of_exp,stud
 
 Count()
 
+select *form students;
+--it will display all record present in the table
+
 select Count(*) from students;
 ---it will tell how many rows are in the table
+
+
+select Count(student_company) from students;
+--it will dispaly how many company from students enrolled, in this query duplicates are also counted maeans if any two students enrolled from same comapany it wil consider two times
+
+--problem statement
+--i want unique instance
+select Count(DISTINCT student_company) from students;
+---it will not consider duplicate 
+
+--you can also give the alis 
+--like
+select Count(DISTINCT student_company) As No_of_company from students;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
