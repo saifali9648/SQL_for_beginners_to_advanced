@@ -740,14 +740,20 @@ GROUP By
 SELECT source_of_joining,count(*) from students GROUP BY source_of_joining;
 
 
+--what i want to know that how many people have joined my course from where means his location.
+
+SELECT location, count(*) from students GROUP BY location;
+
+---this will not work
+SELECT location, count(*) from students GROUP BY source_of_joining;
+
+--now what i want to know that how many people come from which location and got to know about me through.
+
+SELECT location,source_of_joining, count(*) FROM students GROUP BY location,source_of_joining;
 
 
-
-
-
-
-
-
+--PROBLEM STATEMENT
+--I WANT TO KNOW HOW MANY COURSE OPTED IN WHICH DATE WHICH COURSE 
 
 
 
