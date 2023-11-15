@@ -755,6 +755,30 @@ SELECT location,source_of_joining, count(*) FROM students GROUP BY location,sour
 --PROBLEM STATEMENT
 --I WANT TO KNOW HOW MANY COURSE OPTED IN WHICH DATE WHICH COURSE 
 
+select batch_date,selected_course,count(*) from students GROUP BY batch_date,selected_course;
+
+
+MIN & MAX
+--============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
