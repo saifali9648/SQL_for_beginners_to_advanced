@@ -791,6 +791,13 @@ SUM
 SELECT source_of_joining,SUM(year_of_exp) FROM students GROUP BY source_of_joining;
 
 
+AVG
+--===============
+
+--problem statement
+-- i want to know average exeperience of students from  which source
+
+select source_of_joining,AVG(year_of_exp) from students GROUP BY source_of_joining;
 
 
 
