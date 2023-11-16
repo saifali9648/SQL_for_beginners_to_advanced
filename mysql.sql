@@ -760,12 +760,35 @@ select batch_date,selected_course,count(*) from students GROUP BY batch_date,sel
 
 MIN & MAX
 --============================================================
+--i want who have minimum experiance
+
+select MIN(year_of_exp) from students;
+
+---i want who have maximum experiance
+
+select MAX(year_of_exp) from students;
+
+---this wont work
+select MIN(year_of_exp),student_fname from students;
 
 
+--i want student name with minimum exp
 
+select student_fname from students order by year_of_exp limit 1;
+select student_fname,year_of_exp from students order by year_of_exp limit 1;
 
+--problem statement
+--i wnat to know students who are which source of joining with maximum exp
 
+select source_of_joining,MAX(year_of_exp) from students GROUP BY source_of_joining;
 
+SUM
+--===============
+
+--PROBLEM STATEMENT
+---I WANT TO KNOW SUM OF EXPERIANCE ALL SOURCE OF JOINING
+
+SELECT source_of_joining,SUM(year_of_exp) FROM students GROUP BY source_of_joining;
 
 
 
