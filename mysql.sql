@@ -798,6 +798,7 @@ AVG
 -- i want to know average exeperience of students from  which source
 
 select source_of_joining,AVG(year_of_exp) from students GROUP BY source_of_joining;
+select source_of_joining,AVG(selected_course) from students GROUP BY source_of_joining;
 
 
 
