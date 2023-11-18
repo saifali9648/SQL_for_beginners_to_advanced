@@ -800,8 +800,21 @@ AVG
 select source_of_joining,AVG(year_of_exp) from students GROUP BY source_of_joining;
 select source_of_joining,AVG(selected_course) from students GROUP BY source_of_joining;
 
+--====================lession-9==============================================
 
+--data type
+--=====================================
 
+CREATE TABLE courses_new(
+   course_id int PRIMARY KEY,
+   course_name varchar(30) NOT NULL,
+   course_duration_month decimal(3,1) NOT NULL,
+   course_fee int NOT NULL
+);
+
+INSERT INTO courses_new VALUE(1,'BIG DATA',6.5,50000);
+INSERT INTO courses_new VALUE(2,'BIG DATA',3.5,50000);
+INSERT INTO courses_new VALUE(3,'BIG DATA',6,50000);
 
 
 
