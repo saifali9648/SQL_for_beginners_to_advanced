@@ -804,7 +804,7 @@ select source_of_joining,AVG(selected_course) from students GROUP BY source_of_j
 
 --data type
 --=====================================
-
+--decimal
 CREATE TABLE courses_new(
    course_id int PRIMARY KEY,
    course_name varchar(30) NOT NULL,
@@ -816,12 +816,57 @@ INSERT INTO courses_new VALUE(1,'BIG DATA',6.5,50000);
 INSERT INTO courses_new VALUE(2,'BIG DATA',3.5,50000);
 INSERT INTO courses_new VALUE(3,'BIG DATA',6,50000);
 
+--TIMESTAMP
+--WHEN WE INSERT OR UPDATE RECORED IT WILL SHOW TIME WHEN RECORD IS INSERTED OR UPDATED
+CREATE TABLE courses_new(
+   course_id INT PRIMARY KEY,
+   course_name varchar(30) NOT NULL,
+   course_duration_month decimal(3,1) NOT NULL,
+   course_fee INT NOT NULL,
+   changed_at TIMESTAMP DEFAULT now()
+);
+
+INSERT INTO courses_new(course_id,course_name,course_duration_month,course_fee) VALUE(1,'BIG DATA',6.5,50000);
 
 
+INSERT INTO courses_new(course_id,course_name,course_duration_month,course_fee) VALUE(2,'BIG DATA',3.5,50000);
+
+INSERT INTO courses_new(course_id,course_name,course_duration_month,course_fee) VALUE(3,'BIG DATA',6,50000);
+
+--it will show courent time in changed_at attribute that when the data is inserted
+
+--now if we update record what will happen
+
+update courses_new set course_name='devops' where course_id=3;
+
+--it will show earlier time when we insert first time 
+
+---so now we change some small change in our schema
+
+CREATE TABLE courses_new(
+   course_id INT PRIMARY KEY,
+   course_name varchar(30) NOT NULL,
+   course_duration_month decimal(3,1) NOT NULL,
+   course_fee INT NOT NULL,
+   changed_at TIMESTAMP DEFAULT now() on update now()
+);
+
+INSERT INTO courses_new(course_id,course_name,course_duration_month,course_fee) VALUE(1,'BIG DATA',6.5,50000);
 
 
+INSERT INTO courses_new(course_id,course_name,course_duration_month,course_fee) VALUE(2,'BIG DATA',3.5,50000);
+
+INSERT INTO courses_new(course_id,course_name,course_duration_month,course_fee) VALUE(3,'BIG DATA',6,50000);
 
 
+--update data
+
+ update courses_new set course_name='web development' where course_id=1;
+
+----it will show now curent updated time
+
+ update courses_new set course_name='data science' where course_id=3;
+ 
 
 
 
