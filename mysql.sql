@@ -868,6 +868,27 @@ INSERT INTO courses_new(course_id,course_name,course_duration_month,course_fee) 
  update courses_new set course_name='data science' where course_id=3;
  
 
+--======================LESSION-10========================================
+
+--LOGICAL OPERATOR
+
+--NOT EQUAL TO  !=
+
+--to get people who are from delhi
+select *from students where location = 'delhi'
+
+---to get people who are not from delhi
+SELECT *FROM students WHERE location != 'delhi';
+
+--we have also courses table so
+-- get the all courses which has the word 'data'
+
+select *from courses where course_name like '%data%';
+
+--get the all courses which do not have 'data' word
+
+select *from courses where course_name not like '%data%';
+
 
 
 
