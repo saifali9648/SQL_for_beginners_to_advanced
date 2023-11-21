@@ -890,6 +890,12 @@ select *from courses where course_name like '%data%';
 select *from courses where course_name not like '%data%';
 
 
+--I want to get a list of student who have less than 8 year exp and source_of_joining is linkedln and they are from delhi
+
+
+
+
+
 
 
 
