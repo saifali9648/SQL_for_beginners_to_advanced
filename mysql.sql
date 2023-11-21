@@ -892,10 +892,10 @@ select *from courses where course_name not like '%data%';
 
 --I want to get a list of student who have less than 8 year exp and source_of_joining is linkedln and they are from delhi
 
+select student_fname from students where year_of_exp<5 and source_of_joining='linkedln' and location='delhi';
 
 
-
-
+select student_fname,year_of_exp,source_of_joining,location from students where year_of_exp<8 and source_of_joining='linkedln' and location='delhi';
 
 
 
