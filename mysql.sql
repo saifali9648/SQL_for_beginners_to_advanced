@@ -898,7 +898,9 @@ select student_fname from students where year_of_exp<5 and source_of_joining='li
 select student_fname,year_of_exp,source_of_joining,location from students where year_of_exp<8 and source_of_joining='linkedln' and location='delhi';
 
 
+--i want all people who do not fall between 3 to 5 year_of_exp
 
+select * from students where year_of_exp< 3or year_of_exp >5;
 
 
 
