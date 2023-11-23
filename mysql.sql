@@ -900,7 +900,15 @@ select student_fname,year_of_exp,source_of_joining,location from students where 
 
 --i want all people who do not fall between 3 to 5 year_of_exp
 
-select * from students where year_of_exp< 3or year_of_exp >5;
+select * from students where year_of_exp< 3 or year_of_exp >5;
+
+--instead of this we use 'between' operator
+
+select *from students where year_of_exp  not between 3 and 5;
+
+--if i want all people who fall between 3 to 5 year_of_exp
+
+select *from students where year_of_exp between 3 and 5;
 
 
 
