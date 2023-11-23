@@ -898,6 +898,8 @@ select student_fname from students where year_of_exp<5 and source_of_joining='li
 select student_fname,year_of_exp,source_of_joining,location from students where year_of_exp<8 and source_of_joining='linkedln' and location='delhi';
 
 
+
+
 --i want all people who do not fall between 3 to 5 year_of_exp
 
 select * from students where year_of_exp< 3 or year_of_exp >5;
@@ -910,6 +912,22 @@ select *from students where year_of_exp  not between 3 and 5;
 
 select *from students where year_of_exp between 3 and 5;
 
+
+
+
+---get list of students who are from flipkart , walmart or microsoft
+
+select *from students where student_company='flipkart' or student_company='walmart' or student_company='microsoft';
+
+---instead of this we use 'in' operator
+
+select *from students where student_company in('flipkart','walmart','microsoft');
+
+
+
+---i want get list of students who are not from flipkart , walmart or microsoft
+
+select *from students where student_company not in('flipkart','walmart','microsoft');
 
 
 
