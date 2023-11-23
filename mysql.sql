@@ -932,7 +932,13 @@ select *from students where student_company not in('flipkart','walmart','microso
 
 
 
+---if a course is more than 4 months we catagerize it as mater program else it is a diploma
 
+select course_id,course_name,course_fee,
+case
+when course_duration_month > 4 then 'master' 
+else 'diploma'
+end as course_type from courses;
 
 
 
