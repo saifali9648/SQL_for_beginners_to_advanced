@@ -941,6 +941,14 @@ else 'diploma'
 end as course_type from courses;
 
 
+--people working for walmart,flipkart, microsoft we want to say product based and all otheres services based
+
+select student_id,student_fname,student_lname,student_company,
+case
+when student_company in('flipkart','walmart','microsoft') then 'product based'
+else 'service based'
+end as type_of_company from students;
+
 
 
 
