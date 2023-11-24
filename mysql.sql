@@ -949,7 +949,38 @@ when student_company in('flipkart','walmart','microsoft') then 'product based'
 else 'service based'
 end as type_of_company from students;
 
+---we can put multiple condition in case
 
+select student_id,student_fname,student_lname,student_company,
+case
+when student_company in('flipkart','walmart','microsoft') then 'product based'
+when student_company is NULL then 'not define'
+else 'service based'
+end as type_of_company from students;
+
+
+
+--======================LESSION-10=========================================
+
+JOINS
+
+--WE HAVE 2 TABLES
+--COURSES
+--STUDENTS
+
+--I WANT TO KNOW IN WHICH COURSE Rohit HAS ENROLLED
+
+STUDENTS
+--=========
+student_fname, selected_course
+rohit,1
+
+COURSES
+--=========
+course_id,course_name
+2,rohit
+
+select course_name from courses where course_id=(select selected_course from students where student_fname='rohit');
 
 
 
