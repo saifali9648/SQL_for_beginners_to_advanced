@@ -983,6 +983,24 @@ course_id,course_name
 select course_name from courses where course_id=(select selected_course from students where student_fname='rohit');
 
 
+--A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+--so we have two tables
+--students
+--courses
+   --in studets table 'selected_courese'
+   --in courses table 'course_id'
+
+select student_fname,student_lname,selected_course,course_id,course_name from students join courses on students.selected_course = courses.course_id;
+--order by course_id
+select student_fname,student_lname,selected_course,course_id,course_name from students join courses on students.selected_course = courses.course_id ORDER BY course_id;
+
+--by default it is inner join
+
+--only the matching record are considered. non matching record discarded
+
+
+
 
 
 
