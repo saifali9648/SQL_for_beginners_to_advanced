@@ -999,6 +999,46 @@ select student_fname,student_lname,selected_course,course_id,course_name from st
 
 --only the matching record are considered. non matching record discarded
 
+left outer join
+===========
+--all the matching records from the left and right table are considred 
++
+--all non matching records in the left table which does not have the  match  in the right padded with null
+
+--select student_fname,student_lname,selected_course,course_id,course_name from students left join courses on student.selected_course = courses.course_id;
+
+create new table
+
+create table students_latest as select *from students;
+
+--it will create new table as students without any constrant
+
+create table courses_latest as select *from courses;
+
+--it will create new table as courses without any constraint
+
+--now delete a record in the courses_latest table
+
+delete from courses_latest where course_id = 2;
+
+--now write the query for left join
+
+select student_fname,student_lname,selected_course,course_id,course_name from students_latest
+left join courses_latest on students_latest.selected_course = courses_latest.course_id;
+
+
+Right outer join
+=========================
+
+--all the matching records from the Right and left table are considred 
++
+--all non matching records in the Right table which does not have the  match  in the left padded with null
+
+select student_fname,student_lname,selected_course,course_id,course_name from students_latest
+right join courses_latest on students_latest.selected_course = courses_latest.course_id;
+
+
+
 
 
 
