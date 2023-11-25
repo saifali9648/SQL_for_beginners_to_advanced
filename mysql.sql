@@ -1038,8 +1038,57 @@ select student_fname,student_lname,selected_course,course_id,course_name from st
 right join courses_latest on students_latest.selected_course = courses_latest.course_id;
 
 
+full outer join
+--=============================
+
+--all the matching record
++
+--non matching record from left
++
+--non matching record from right
+
+---with the help of union we can do full outer join
+
+select student_fname,student_lname,selected_course,course_id,course_name from students_latest
+left join courses_latest on students_latest.selected_course = courses_latest.course_id
+union
+select student_fname,student_lname,selected_course,course_id,course_name from students_latest
+right join courses_latest on students_latest.selected_course = courses_latest.course_id;
 
 
+--IMPORTANT SQL INTERVIEW QUESTION
+--===========================================================
+
+--Q. Where Vs Having clause in sql
+
+--problem statement
+--i want to know total number of students who have join from each source and sources ar like linkedln, youtube, google
+
+select source_of_joining,count(*) as total from students GROUP by source_of_joining;
+
+--problem statement
+
+-- i want to know the leads source_of_joining with more than 2  person has registred
+
+select source_of_joining,count(*),as total from students GROUP BY source_of_joining where total > 1;
+--it will display error
+
+--because where  clause is use before aggregation
+-- where clause is used to filter the individual records before the aggeregation
+
+--so right query for this paricular problem statement is
+
+select source_of_joining,count(*) as total from students GROUP BY source_of_joining Having total > 2;
+
+--problem statement
+-- i want to know the count of people who registread through linkedln
+
+select source_of_joining,count(*) as total from students GROUP by source_of_joining Having source_of_joining = 'linkedln';
+
+--it will display the right output but this is not efficent or productive query for this ps
+--efficent query is
+
+select source_of_joining,count(*) as total from students where source_of_joining = 'linkedln' GROUP by source_of_joining;
 
 
 
