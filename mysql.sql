@@ -1065,6 +1065,8 @@ right join courses_latest on students_latest.selected_course = courses_latest.co
 
 --having is use after GROUB BY
 
+--where is more performate than having
+
 --problem statement
 --i want to know total number of students who have join from each source and sources ar like linkedln, youtube, google
 
@@ -1103,6 +1105,40 @@ select source_of_joining,count(*) as total from students where source_of_joining
 ======-- I want to know the location from which more than 1 students has joined and the students experience is more than 10 years.
 
 select location,count(*) as total from students where year_of_exp > 2 GROUP BY location having total > 1;
+
+
+
+--VERY IMPORTANT SQL INTERVIEW QUESTION
+
+CREATE TABLE employee2(
+   firstname varchar(20),
+   lastname varchar(20),
+   age int,
+   salary int,
+   location varchar(20)
+);
+
+insert into employee2 values('sachin','sharma',28,10000,'banglore');
+
+insert into employee2 values('shane','wanrne',30,20000,'banglore');
+
+insert into employee2 values('rohit','sharma',32,30000,'hyderabad');
+
+insert into employee2 values('shikhar','dhawan',32,25000,'hyderabad');
+
+insert into employee2 values('rahul','dravid',31,20000,'banglore');
+
+insert into employee2 values('saurabh','ganguly',32,15000,'pune');
+
+insert into employee2 values('kapil','dev',34,10000,'pune')
+
+--problem statement 
+
+--How many people are from each location and average salary at each loacation
+
+select location,count(location) as no_of_location, AVG(salary) from employee2 GROUP BY location;
+
+
 
 
 
