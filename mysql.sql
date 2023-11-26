@@ -1061,6 +1061,10 @@ right join courses_latest on students_latest.selected_course = courses_latest.co
 
 --Q. Where Vs Having clause in sql
 
+--where is use before GROUP BY
+
+--having is use after GROUB BY
+
 --problem statement
 --i want to know total number of students who have join from each source and sources ar like linkedln, youtube, google
 
@@ -1091,7 +1095,14 @@ select source_of_joining,count(*) as total from students GROUP by source_of_join
 select source_of_joining,count(*) as total from students where source_of_joining = 'linkedln' GROUP by source_of_joining;
 
 
+--Can we use where and having clause in same query
 
+    --Ans :- Yes!
+
+--problem statement 
+======-- I want to know the location from which more than 1 students has joined and the students experience is more than 10 years.
+
+select location,count(*) as total from students where year_of_exp > 2 GROUP BY location having total > 1;
 
 
 
