@@ -1138,6 +1138,15 @@ insert into employee2 values('kapil','dev',34,10000,'pune')
 
 select location,count(location) as no_of_location, AVG(salary) from employee2 GROUP BY location;
 
+--output
+/*+-----------+----------------+-------------+
+| location  | no_of_location | AVG(salary) |
++-----------+----------------+-------------+
+| banglore  |              3 |  16666.6667 |
+| hyderabad |              2 |  27500.0000 |
+| pune      |              2 |  12500.0000 |
++-----------+----------------+-------------+*/
+
 
 
 
