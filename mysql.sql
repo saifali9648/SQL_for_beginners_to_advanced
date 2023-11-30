@@ -1147,6 +1147,13 @@ select location,count(location) as no_of_location, AVG(salary) from employee2 GR
 | pune      |              2 |  12500.0000 |
 +-----------+----------------+-------------+*/
 
+--problem statement
+-- i want fistname and lastname and how many people are from each location and average salary at each location
+
+--we can use 'over partition by' clause to achive
+
+select firstname,lastname,location, count(location) over(partition  by location) as total , AVG(salary) over(partition by location) as average from employee2;
+--(RUN THIS QUERY ON "ONECOMPILERSQL")
 
 
 
