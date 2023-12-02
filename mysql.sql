@@ -1155,7 +1155,67 @@ select location,count(location) as no_of_location, AVG(salary) from employee2 GR
 select firstname,lastname,location, count(location) over(partition  by location) as total , AVG(salary) over(partition by location) as average from employee2;
 --(RUN THIS QUERY ON "ONECOMPILERSQL")
 
-select firstname,lastname,location, count(location) over(partition  by location) as total , AVG(salary) over(partition by location) as average from employee2;
+
+---===========================LESSION-14================================================
+--ROW NUMBER
+
+
+CREATE TABLE employee2(
+   firstname varchar(20),
+   lastname varchar(20),
+   age int,
+   salary int,
+   location varchar(20)
+);
+
+insert into employee2 values('sachin','sharma',28,10000,'banglore');
+
+insert into employee2 values('shane','wanrne',30,20000,'banglore');
+
+insert into employee2 values('rohit','sharma',32,30000,'hyderabad');
+
+insert into employee2 values('shikhar','dhawan',32,25000,'hyderabad');
+
+insert into employee2 values('rahul','dravid',31,20000,'banglore');
+
+insert into employee2 values('saurabh','ganguly',32,15000,'pune');
+
+insert into employee2 values('kapil','dev',34,10000,'pune')
+
+select firstname,lastname,salary,row_number() over (order by salary desc) as rownum from employee2;
+---problem statement
+--find 5th higest salary
+select *from(
+select firstname, lastname, salary, row_number() over (order by salary) as rownum from employee2) temptable where rownum = 5;
+
+--- problem statement is to assign row number for patitions based on each location
+
+select firstname,lastname,location,salary, row_number() over (partition by location order by salary desc) from employee2;
+
+-- i want to find higest salary getter from each location
+select *from(
+select firstname,lastname,location,salary, row_number() over (partition by location order by salary desc) as rownum from employee2) temptable where rownum = 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
