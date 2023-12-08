@@ -1194,7 +1194,7 @@ select firstname,lastname,location,salary, row_number() over (partition by locat
 
 -- i want to find higest salary getter from each location
 select *from(
-select firstname,lastname,location,salary, row_number() over (partition by location order by salary desc) as rownum from employee2) temptable where rownum = 1;
+select firstname,lastname,location,salary, row_number() over (partition by location order by salary desc) as rownum from employee2) temptable where rownum =;
 
 
 
