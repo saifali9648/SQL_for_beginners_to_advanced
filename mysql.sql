@@ -1199,8 +1199,20 @@ select firstname,lastname,location,salary, row_number() over (partition by locat
 
 
 
++------------+---------------+---------------+---------------+-----------------------+---------------+-------------------+---------------------+-----------------+-------------+-----------------+------------+-------------------+----------+-----------+-----------------+-----------------------+------------+
+| student_id | student_fname | student_mname | student_lname | student_email         | student_phone | student_alt_phone | enrollment_date     | selected_course | year_of_exp | student_company | batch_date | source_of_joining | location | course_id | course_name     | course_duration_month | course_fee |
++------------+---------------+---------------+---------------+-----------------------+---------------+-------------------+---------------------+-----------------+-------------+-----------------+------------+-------------------+----------+-----------+-----------------+-----------------------+------------+
+|          1 | rohot         | NULL          | sharma        | rohit@gmail.com       | 9191919191    | NULL              | 2023-11-11 20:11:48 |               3 |           3 | walmart         | 10-11-2023 | linkedln          | ambala   |         3 | data science    |                     6 |      40000 |
+|          2 | irfan         | NULL          | pathan        | irfan@gmail.com       | 9192919291    | NULL              | 2023-11-11 20:11:48 |               2 |           3 | flipkart        | 10-11-2023 | linkedln          | ambala   |         2 | web development |                     3 |      20000 |
+|          3 | surya         | NULL          | kumar         | surya`@gmail.com      | 9193919393    | NULL              | 2023-11-11 20:11:48 |               3 |           3 | amazon          | 10-11-2023 | linkedln          | ambala   |         3 | data science    |                     6 |      40000 |
+|          4 | virat         | NULL          | kholi         | virat`@gmail.com      | 9194919493    | NULL              | 2023-11-11 20:11:48 |               2 |           5 | hcl             | 10-11-2023 | facebook          | delhi    |         2 | web development |                     3 |      20000 |
+|          5 | inshan        | NULL          | kishan        | ishan`@gmail.com      | 9195919493    | NULL              | 2023-11-11 20:11:48 |               1 |           4 | TCS             | 10-11-2023 | facebook          | bihar    |         1 | big data        |                     6 |      50000 |
+|          6 | md            | NULL          | shami         | shami`@gmail.com      | 9191919493    | NULL              | 2023-11-11 20:11:48 |               1 |           6 | infogain        | 10-11-2023 | instagram         | delhi    |         1 | big data        |                     6 |      50000 |
+|          7 | subhman       | NULL          | gill          | gill@gmail.com        | 9197919493    | NULL              | 2023-11-11 20:11:48 |               1 |           4 | microsoft       | 10-11-2023 | instagram         | mumbai   |         1 | big data        |                     6 |      50000 |
+|          9 | rohit         | NULL          | sharma        | rohitsharma@gmail.com | 9191918191    | NULL              | 2023-11-14 17:22:17 |               2 |           3 | walmart         | 10-11-2023 | linkedln          | ambala   |         2 | web development |                     3 |      20000 |
++------------+---------------+---------------+---------------+-----------------------+---------------+-------------------+---------------------+-----------------+-------------+-----------------+------------+-------------------+----------+-----------+-----------------+-----------------------+------------+
 
-
+select student_id, student_fname, selected_courese, course_id, course_name, enrollment_date, from students join courses on students.selected_course = courses.course_id;
 
 
 
