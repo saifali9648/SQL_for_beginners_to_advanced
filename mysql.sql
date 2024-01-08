@@ -1001,6 +1001,10 @@ select student_fname,student_lname,selected_course,course_id,course_name from st
 
 left outer join
 ===========
+--return all results from the first table and any matching record from second table
+--if there is no  matching records, it will retrun null for the columns from the second table
+
+
 --all the matching records from the left and right table are considred 
 +
 --all non matching records in the left table which does not have the  match  in the right padded with null
