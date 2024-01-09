@@ -1030,6 +1030,17 @@ delete from courses_latest where course_id = 2;
 select student_fname,student_lname,selected_course,course_id,course_name from students_latest
 left join courses_latest on students_latest.selected_course = courses_latest.course_id;
 
+--EXERCISE 1
+---SHOW THE CUSTOMER FIRST NAME, LAST NAME , ORDERDATE,STATUS FJOR EACH ORDER 
+--- IN THE ORDER TABEL WITH A MATCHING CUSTOMER IN CUSTOMERS
+
+SELECT customerFirstName, customerLastName, orderDate, status from customers A left join orders B on A.customerNumber = B.customerNumber;
+
+--EXERCISE 2
+--DISPLAY THE FIRST NAME AND LAST NAME OF ALL CUSTOMERS AND ORDER DATE AND ORDERNUMBER OF ALL THEIR ORDERS  EVEN IF THE CUSTOMER MADE NO ORDER
+SELECT contactFirstName, contactLastName, orderDate, ordernumber from customers A left join oreders B on A.customerNumber = B.customerNumber;
+
+
 
 Right outer join
 =========================
