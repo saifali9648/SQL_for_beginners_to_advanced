@@ -1232,14 +1232,52 @@ select student_id, student_fname, selected_courese, course_id, course_name, enro
 
 
 
+--Find the second heighest salary 
+
++-----------+----------+------+--------+-----------+
+| firstname | lastname | age  | salary | location  |
++-----------+----------+------+--------+-----------+
+| sachin    | sharma   |   28 |  10000 | banglore  |
+| shane     | wanrne   |   30 |  20000 | banglore  |
+| rohit     | sharma   |   32 |  30000 | hyderabad |
+| shikhar   | dhawan   |   32 |  25000 | hyderabad |
+| rahul     | dravid   |   31 |  20000 | banglore  |
+| saurabh   | ganguly  |   32 |  15000 | pune      |
+| kapil     | dev      |   34 |  10000 | pune      |
++-----------+----------+------+--------+-----------+
+
+select max(salary) as second_max_salary from employee2 where salary < (select max(salary) from employee2);
++-------------------+
+| second_max_salary |
++-------------------+
+|             25000 |
++-------------------+
+
+select max(salary) as Third_max_salary  from employee2 where salary < (select  max(salary) from employee2 where salary<(se
+lect max(salary) from employee2) );
+
+--Find third heighest salary
+
++-----------+----------+------+--------+-----------+
+| firstname | lastname | age  | salary | location  |
++-----------+----------+------+--------+-----------+
+| sachin    | sharma   |   28 |  10000 | banglore  |
+| shane     | wanrne   |   30 |  20000 | banglore  |
+| rohit     | sharma   |   32 |  30000 | hyderabad |
+| shikhar   | dhawan   |   32 |  25000 | hyderabad |
+| rahul     | dravid   |   31 |  20000 | banglore  |
+| saurabh   | ganguly  |   32 |  15000 | pune      |
+| kapil     | dev      |   34 |  10000 | pune      |
++-----------+----------+------+--------+-----------+
 
 
+select max(salary) as Third_max_salary from employee2 where salary < (select max(salary)
+from employee2 where salary < (select max(salary) from employee2));
 
-
-
-
-
-
+select max(salary) from employee2 , select max(salary) as second_max_salary from employee2
+where salary < (select max(salary) from employee2), select max(salary) as Third_max_salary
+from employee2 where salary < (select max(salary) from employee2 where salary <
+(select max(salary) from employee2));
 
 
 
