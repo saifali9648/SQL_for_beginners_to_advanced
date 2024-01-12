@@ -932,7 +932,7 @@ select *from students where student_company not in('flipkart','walmart','microso
 
 
 
----if a course is more than 4 months we catagerize it as mater program else it is a diploma
+---if a course is more than 4 months we catagerize it as master program else it is a diploma
 
 select course_id,course_name,course_fee,
 case
