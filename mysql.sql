@@ -1172,7 +1172,7 @@ select firstname,lastname,location, count(location) over(partition  by location)
 
 
 ---===========================LESSION-14================================================
---ROW NUMBER
+--ROW NUMBER  6:06:44
 
 
 CREATE TABLE employee2(
