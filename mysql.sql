@@ -1169,12 +1169,12 @@ select location,count(location) as no_of_location, AVG(salary) from employee2 GR
 
 select firstname,lastname,location, count(location) over(partition  by location) as total , AVG(salary) over(partition by location) as average from employee2;
 --(RUN THIS QUERY ON "ONECOMPILERSQL")
-
-
+                  --  ^
+                  --  |
+                  --  |
+                  --  |
 ---===========================LESSION-14================================================
---ROW NUMBER  6:06:44
-
-
+--ROW NUMBER  6:06:44 to 6:12:00
 CREATE TABLE employee2(
    firstname varchar(20),
    lastname varchar(20),
