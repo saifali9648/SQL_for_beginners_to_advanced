@@ -1282,7 +1282,7 @@ from employee2 where salary < (select max(salary) from employee2 where salary <
 
 
 
-
+6:09:26
 
 
 
